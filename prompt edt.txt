@@ -1,0 +1,407 @@
+# AI Prompt for Recreating the Finance Platform .
+
+# Context and Role
+
+You are a Senior Full-Stack Developer and Software Architect specializing in scalable fintech applications using modern JavaScript technologies. Your task is to recreate a complete AI-powered financial management platform. The application must replicate the architecture, workflows, features, folder structure, and user experience of a modern finance platform built with Next.js 15, Prisma, PostgreSQL, Clerk authentication, AI integrations, event-driven background jobs, and responsive dashboard interfaces.
+
+The goal is to build a highly polished, full-stack finance management application that supports secure authentication, account management, transaction tracking, AI-powered receipt scanning, budget analytics, recurring transaction automation, email notifications, and intelligent financial insights.
+
+The system should follow clean architecture principles, production-ready coding standards, modular folder organization, reusable UI patterns, and scalable backend logic.
+
+---
+
+# Objective
+
+Develop a fully functional finance management platform that replicates the structure and behavior of the provided repository. The application should include:
+
+1 Secure authentication and protected dashboard routes.
+2 Financial account creation and management.
+3 Transaction tracking with CRUD operations.
+4 Budget monitoring with progress indicators.
+5 Interactive analytics dashboard with charts and summaries.
+6 AI-powered receipt scanner using image upload.
+7 Event-driven recurring transaction automation.
+8 Smart email alerts for budget thresholds.
+9 Monthly financial insights generated using AI.
+10 Responsive modern UI with reusable components.
+11 Secure API handling and optimized database operations.
+
+The project must be production-ready and structured similarly to a professional SaaS fintech application.
+
+---
+
+# Core Functional Requirements
+
+# Authentication System
+
+Implement a complete authentication system using Clerk.
+
+Features must include:
+
+1 User sign-up and sign-in.
+2 Protected dashboard routes.
+3 Session handling.
+4 Middleware-based route protection.
+5 Authentication layouts for public and private sections.
+6 Redirect authenticated users to the dashboard.
+7 Persistent login sessions.
+
+Create separate route groups:
+
+* (auth) for sign-in and sign-up pages.
+* (main) for protected dashboard pages.
+
+---
+
+# Dashboard System
+
+Build a modern financial dashboard containing:
+
+1 Total balance overview.
+2 Income vs expenses analytics.
+3 Recent transaction summaries.
+4 Budget tracking cards.
+5 Interactive charts using Recharts.
+5 Monthly spending visualization.
+6 Financial trend monitoring.
+
+The dashboard must include reusable components such as:
+
+1 Account cards.
+2 Budget progress bars.
+3 Transaction overview widgets.
+4 Analytics charts.
+5 Empty states and loading skeletons.
+
+Use responsive grid layouts and optimized rendering.
+
+---
+
+# Account Management
+
+Implement a complete account management module.
+
+Features should include:
+
+1 Create financial accounts.
+2 Edit and delete accounts.
+3 Track balances.
+4 Assign account types.
+5 View account-specific transaction history.
+6 Paginated transaction tables.
+7 Dynamic charts for account performance.
+
+Use server actions for mutations and secure database communication.
+
+---
+
+# Transaction Management
+
+Create a transaction management system with:
+
+1 Add transaction form.
+2 Edit and delete transactions.
+3 Income and expense categorization.
+4 Recurring transaction support.
+5 Receipt attachment support.
+6 Transaction filtering and sorting.
+7 Pagination support.
+8 Validation and sanitization.
+
+The transaction form should include:
+
+1 Amount.
+2 Category.
+3 Date.
+4 Description.
+5 Transaction type.
+6 Recurring toggle.
+7 Account selection.
+
+Implement optimistic UI updates where appropriate.
+
+---
+
+# AI Receipt Scanner
+
+Develop an AI-powered receipt scanner using Google Gemini AI.
+
+The feature should:
+
+1 Allow users to upload receipt images.
+2 Extract merchant name, amount, date, and category.
+3 Auto-fill transaction forms.
+4 Validate extracted data.
+5 Handle unsupported image formats gracefully.
+6 Show loading and processing states.
+
+Use secure API integration and asynchronous processing.
+
+---
+
+# Budget Monitoring System
+
+Build a smart budgeting system.
+
+Features must include:
+
+1 Monthly budget creation.
+2 Spending progress tracking.
+3 Budget utilization percentage.
+4 Threshold alerts.
+5 Dynamic progress bars.
+6 Overspending detection.
+
+When spending exceeds 80% of the monthly budget:
+
+* Trigger an automated email notification.
+* Send warning alerts to users.
+* Log events securely.
+
+---
+
+# AI Financial Insights
+
+Generate intelligent financial reports using AI.
+
+The system should:
+
+1 Analyze monthly spending habits.
+2 Detect unusual spending patterns.
+3 Generate financial summaries.
+4 Provide savings recommendations.
+5 Create AI-generated insights.
+6 Display reports inside dashboard cards.
+
+Use Google Gemini API for report generation.
+
+---
+
+# Background Jobs and Automation
+
+Use Inngest for event-driven workflows.
+
+Implement:
+
+* Recurring transaction processing.
+* Monthly report generation.
+* Budget alert triggers.
+* Scheduled financial summaries.
+* Async notification workflows.
+
+Create API routes for Inngest event handling.
+
+---
+
+# Email Notification System
+
+Use Resend or Nodemailer for email delivery.
+
+The system must:
+
+* Send budget alerts.
+* Send recurring transaction notifications.
+* Deliver monthly reports.
+* Include formatted email templates.
+* Use React Email templates.
+* Handle email delivery failures gracefully.
+
+Store credentials securely using environment variables.
+
+---
+
+# Database and ORM
+
+Use PostgreSQL with Prisma ORM.
+
+Create models for:
+
+* Users.
+* Accounts.
+* Transactions.
+* Budgets.
+* Recurring transactions.
+* AI reports.
+* Notifications.
+
+Requirements:
+
+* Relational schema design.
+* Indexed queries.
+* Secure database access.
+* Prisma migrations.
+* Optimized query performance.
+* Data validation.
+
+---
+
+# UI and Design Requirements
+
+Use Next.js 15 App Router with Tailwind CSS and Shadcn UI.
+
+The interface should:
+
+* Be fully responsive.
+* Support desktop, tablet, and mobile layouts.
+* Include dark modern fintech aesthetics.
+* Use clean typography.
+* Include smooth hover transitions.
+* Use reusable UI primitives.
+* Follow accessibility standards.
+* Support keyboard navigation.
+* Include loading states and animations.
+
+Use Framer Motion for:
+
+* Page transitions.
+* Dashboard animations.
+* Modal interactions.
+* Loading effects.
+* Chart appearance animations.
+
+---
+
+# Security Requirements
+
+Implement production-grade security practices.
+
+Requirements include:
+
+* Input sanitization.
+* XSS prevention.
+* Rate limiting.
+* Bot protection using ArcJet.
+* Environment variable protection.
+* Secure API routes.
+* Validation using Zod.
+* Protected server actions.
+
+Never expose API keys on the client side.
+
+---
+
+# Performance Optimization
+
+Optimize the application for scalability and speed.
+
+Requirements:
+
+* Lazy loading.
+* Dynamic imports.
+* Server-side rendering where beneficial.
+* Optimized bundle size.
+* Efficient database queries.
+* Debounced searches.
+* Caching strategies.
+* Skeleton loaders.
+* Image optimization.
+
+Ensure charts and analytics remain performant with large datasets.
+
+---
+
+# Folder Structure Requirements
+
+Follow a modular folder architecture similar to:
+
+
+bash
+/actions
+/app
+  /(auth)
+  /(main)
+  /api
+/components
+/emails
+/inngest
+/lib
+/prisma
+/public
+
+
+Organize reusable components into feature-specific folders.
+
+Use server actions inside the /actions directory.
+
+---
+
+# Deployment and Environment Configuration
+
+Provide setup instructions for:
+
+* Local development.
+* Prisma setup.
+* PostgreSQL configuration.
+* Clerk authentication setup.
+* Gemini API integration.
+* Resend email configuration.
+* ArcJet setup.
+* Inngest local server.
+
+Include .env.example with all required environment variables.
+
+---
+
+# Technology Stack
+
+Frontend:
+
+* Next.js 15
+* React 19
+* Tailwind CSS
+* Shadcn UI
+* Framer Motion
+* Recharts
+
+Backend:
+
+* Node.js
+* Next.js Server Actions
+* Prisma ORM
+* PostgreSQL
+
+Authentication:
+
+* Clerk
+
+AI Integration:
+
+* Google Gemini API
+
+Background Jobs:
+
+* Inngest
+
+Email Service:
+
+* Resend or Nodemailer
+
+Security:
+
+* ArcJet
+* Zod validation
+
+---
+
+# Final Deliverables
+
+The completed project must include:
+
+* Fully functional finance dashboard.
+* Secure authentication.
+* AI receipt scanner.
+* Budget management system.
+* Interactive charts.
+* Recurring transaction automation.
+* Email notification workflows.
+* Modular reusable components.
+* Prisma database schema.
+* Production-ready API architecture.
+* Environment setup documentation.
+* Responsive UI design.
+* Optimized application performance.
+
+The final application should visually and functionally replicate the provided finance platform repository while maintaining clean code quality, scalability, and professional SaaS-level architecture.
+
+
+
