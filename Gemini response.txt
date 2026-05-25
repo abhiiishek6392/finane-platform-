@@ -579,21 +579,21 @@ Bash
 DATABASE_URL="postgresql://username:secure_password@localhost:5432/finance_db?schema=public"
 
 # Clerk Cryptographic Credentials Core
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxxxxxxxxxxxxxxxxxxxxxxx
-CLERK_SECRET_KEY=sk_live_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
 
 # Google AI Core Engine Parameters
-GEMINI_API_KEY=AIzaSyxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+GEMINI_API_KEY=
 
 # Email Distribution & Core Notification Credentials
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+RESEND_API_KEY=
 
 # ArcJet Network Layer Security Keys
-ARCJET_KEY=ajkey_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ARCJET_KEY=
 
 # Inngest Execution Verification Signatures
-INNGEST_EVENT_KEY=inkey_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-INNGEST_SIGNING_KEY=signkey_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+INNGEST_EVENT_KEY=
+INNGEST_SIGNING_KEY=
 Installation & Initialization Order
 Install Base Dependencies:
 
@@ -658,7 +658,7 @@ Creativity
 3.5/5
 ? Covered well
 
-Full Prisma schema — all 6 models with indexes
+Full Prisma schema ï¿½ all 6 models with indexes
 Clerk auth + middleware route protection
 ArcJet bot detection + token bucket rate limiting
 Inngest cron jobs + event-driven budget alerts
@@ -670,11 +670,11 @@ Full .env.example + setup commands
 ? Missing / incomplete
 
 No account CRUD actions (create/edit/delete)
-No transaction edit/delete — only create shown
-UI incomplete — no budget progress bar component
+No transaction edit/delete ï¿½ only create shown
+UI incomplete ï¿½ no budget progress bar component
 No Framer Motion page transitions (only chart)
 generator uses wrong value: "prisma-client-client"
-Gemini AI response.text — incorrect SDK call pattern
+Gemini AI response.text ï¿½ incorrect SDK call pattern
 No optimistic UI updates mentioned
 ArcJet not wired into server actions (only defined)
 Notable code-level bugs
@@ -683,7 +683,7 @@ Notable code-level bugs
 
 `provider = "prisma-client-client"` should be `"prisma-client-js"`. This will crash `prisma generate` entirely.
 
-?? Gemini SDK usage — incorrect API call
+?? Gemini SDK usage ï¿½ incorrect API call
 
 `response.text` is not valid on the `@google/genai` SDK. The correct call is `response.candidates[0].content.parts[0].text` or via the `generateContent` response helper. Will throw at runtime.
 
@@ -693,7 +693,7 @@ The `aj` instance is created in `lib/arcjet.ts` but never imported into server a
 
 ?? Inngest: no monthly AI report cron job
 
-Prompt explicitly requires monthly financial summaries via Inngest. Only recurring transactions + budget alerts are implemented — the AI report scheduler is missing.
+Prompt explicitly requires monthly financial summaries via Inngest. Only recurring transactions + budget alerts are implemented ï¿½ the AI report scheduler is missing.
 
 3.9/5
 This is a genuinely strong, domain-correct response. All required technologies are present and the architecture is sound. It falls short on two runtime-breaking bugs (Prisma generator + Gemini SDK), incomplete UI components, and the missing monthly AI report automation. Fix those and it's production-deployable.
